@@ -21,6 +21,26 @@
     <!-- 静态资源默认servlet配置 -->
     <mvc:default-servlet-handler/>
 
+    <!--拦截器配置-->
+    <mvc:interceptors>
+        <!-- 对所有请求都拦截，公共拦截器可以有多个 -->
+        <bean name="TestInterceptor1" class="com.xiexing.interceptor.TestInterceptor1"/>
+        <!--<bean name="TestInterceptor2" class="com.xiexing.interceptor.TestInterceptor2"/>-->
+
+        <!--配置特定拦截器-->
+        <mvc:interceptor>
+            <!-- 对/test.html进行拦截 -->
+            <mvc:mapping path="/test.html"/>
+            <!-- 特定请求的拦截器只能有一个-->
+            <bean class="com.xiexing.interceptor.TestInterceptor2"/>
+        </mvc:interceptor>
+
+    </mvc:interceptors>
+
+
+
+
+
 
     <!-- 配置jsp 显示ViewResolver -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

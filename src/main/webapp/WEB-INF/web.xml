@@ -39,27 +39,53 @@
         <servlet-name>SpringMVC</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-
-    <!-- 用来声明filter的相关设定,过滤器可以截取和修改一个servlet或jsp页面的请求或从一个servlet或jsp页面发出的响应 -->
+    
+    
+    <!--自定义过滤器1-->
     <filter>
-        <filter-name>characterEncodingFilter</filter-name>
-        <!--自定义过滤器-->
-        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-        <init-param>
-            <param-name>encoding</param-name>
-            <param-value>UTF-8</param-value>
-        </init-param>
-        <init-param>
-            <param-name>forceEncoding</param-name>
-            <param-value>true</param-value>
-        </init-param>
+        <filter-name>testFilter1</filter-name>
+        <filter-class>com.xiexing.filter.TestFilter1</filter-class>
     </filter>
-
-    <!-- 用来定义filter所对应的URL -->
     <filter-mapping>
-        <filter-name>characterEncodingFilter</filter-name>
+        <filter-name>testFilter1</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <!--自定义过滤器2-->
+    <filter>
+        <filter-name>testFilter2</filter-name>
+        <filter-class>com.xiexing.filter.TestFilter2</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>testFilter2</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+    
+    
+    
+
+    <!--&lt;!&ndash; 用来声明filter的相关设定,过滤器可以截取和修改一个servlet或jsp页面的请求或从一个servlet或jsp页面发出的响应 &ndash;&gt;-->
+    <!--<filter>-->
+        <!--<filter-name>characterEncodingFilter</filter-name>-->
+        <!--&lt;!&ndash;自定义过滤器&ndash;&gt;-->
+        <!--<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>-->
+        <!--<init-param>-->
+            <!--<param-name>encoding</param-name>-->
+            <!--<param-value>UTF-8</param-value>-->
+        <!--</init-param>-->
+        <!--<init-param>-->
+            <!--<param-name>forceEncoding</param-name>-->
+            <!--<param-value>true</param-value>-->
+        <!--</init-param>-->
+    <!--</filter>-->
+
+    <!--&lt;!&ndash; 用来定义filter所对应的URL &ndash;&gt;-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>characterEncodingFilter</filter-name>-->
+        <!--<url-pattern>/*</url-pattern>-->
+    <!--</filter-mapping>-->
 
     <!-- 定义首页列单 -->
     <welcome-file-list>
