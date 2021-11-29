@@ -1,10 +1,4 @@
-/**
- * Copyright (C): 长安新生(深圳)金融投资有限公司
- * FileName: FileUploadController
- * Author:   xiexing
- * Date:     2018/12/17 14:28
- * Description: 文件上传
- */
+
 package com.xiexing.controller;
 
 import org.apache.commons.io.FileUtils;
